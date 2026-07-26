@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Log In",
+    "category": "General"
+  },
+  {
+    "id": 2,
+    "name": "Claim Daily Rewards",
+    "category": "General"
+  },
+  {
+    "id": 3,
+    "name": "Complete Daily Quests",
+    "category": "Quest"
+  },
+  {
+    "id": 4,
+    "name": "Spend Vitality",
+    "category": "Energy"
+  },
+  {
+    "id": 5,
+    "name": "Guild Donation",
+    "category": "Guild"
+  },
+  {
+    "id": 6,
+    "name": "Arena Matches",
+    "category": "PvP"
+  },
+  {
+    "id": 7,
+    "name": "World Boss",
+    "category": "Boss"
+  },
+  {
+    "id": 8,
+    "name": "Treasure Hunt",
+    "category": "Exploration"
+  }
+]
