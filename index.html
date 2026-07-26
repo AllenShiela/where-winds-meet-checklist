@@ -1,279 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Where Winds Meet Daily Checklist</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="style.css">
+<title>Where Winds Meet Companion</title>
 
-    <meta name="theme-color" content="#0d0d0d">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+
+<meta name="theme-color" content="#0b0b0b">
 </head>
 
 <body>
 
 <header class="hero">
 
-    <div class="hero-overlay">
+<div class="overlay">
 
-        <h1>Where Winds Meet</h1>
+<h1>WHERE WINDS MEET</h1>
 
-        <p>
-            Wuxia Companion
-        </p>
+<p>Companion v2.0</p>
 
-        <div class="hero-stats">
+<div class="progress-card">
 
-            <div class="hero-card">
+<div class="circle">
 
-                <span>Today's Progress</span>
-
-                <h2 id="progressPercent">0%</h2>
-
-            </div>
-
-            <div class="hero-card">
-
-                <span>Current Streak</span>
-
-                <h2 id="streakCount">1 Day</h2>
-
-            </div>
-
-            <div class="hero-card">
-
-                <span>Daily Reset</span>
-
-                <h2 id="resetTime">
-                    Loading...
-                </h2>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</header>
-
-<div class="dashboard">
-
-    <div class="card">
-        <h2>Today's Progress</h2>
-
-        <div class="progress-bar">
-            <div id="progressFill"></div>
-        </div>
-
-        <span id="progressText">
-            0 / 0 Completed
-        </span>
-    </div>
-
-    <div class="card">
-        <h2>Daily Reset</h2>
-
-        <p id="resetTime">
-            Loading...
-        </p>
-    </div>
+<span id="progressPercent">0%</span>
 
 </div>
 
-<main id="taskContainer">
+<div class="progress-info">
 
-<!-- LOGIN -->
+<h2>Today's Progress</h2>
 
-<section class="category">
+<p>
+Complete your daily activities.
+</p>
 
-<h2>Login</h2>
+</div>
 
-<label class="task">
-<input type="checkbox" class="taskCheck">
-Claim Login Reward
-</label>
+</div>
 
-<label class="task">
-<input type="checkbox" class="taskCheck">
-Check Mail
-</label>
+</div>
 
-<label class="task">
-<input type="checkbox" class="taskCheck">
-Claim Event Rewards
-</label>
+</header>
 
-<label class="task">
-<input type="checkbox" class="taskCheck">
-Visit Shop Freebies
-</label>
+<nav class="bottom-nav">
 
-</section>
+<button class="nav-item active">
+🏠
+<span>Home</span>
+</button>
 
-<!-- DAILY QUESTS -->
+<button class="nav-item">
+✅
+<span>Daily</span>
+</button>
 
-<section class="category">
+<button class="nav-item">
+🗺️
+<span>Explore</span>
+</button>
 
-<h2>Daily Quests</h2>
+<button class="nav-item">
+👤
+<span>Character</span>
+</button>
 
-<label class="task">
-<input type="checkbox" class="taskCheck">
-Complete Daily Quest #1
-</label>
+<button class="nav-item">
+⚙️
+<span>Settings</span>
+</button>
 
-<label class="task">
-<input type="checkbox" class="taskCheck">
-Complete Daily Quest #2
-</label>
+</nav>
 
-<label class="task">
-<input type="checkbox" class="taskCheck">
-Complete Daily Quest #3
-</label>
+<main>
 
-<label class="task">
-<input type="checkbox" class="taskCheck">
-Complete Daily Quest #4
-</label>
+<section class="dashboard">
 
-</section>
+<div class="card">
 
-<!-- BOSSES -->
+<h3>Completed</h3>
 
-<section class="category">
+<p id="completedTasks">0</p>
 
-<h2>Bosses</h2>
+</div>
 
-<label class="task">
-<input type="checkbox" class="taskCheck">
-World Boss
-</label>
+<div class="card">
 
-<label class="task">
-<input type="checkbox" class="taskCheck">
-Elite Boss
-</label>
+<h3>Remaining</h3>
 
-<label class="task">
-<input type="checkbox" class="taskCheck">
-Dungeon Boss
-</label>
+<p id="remainingTasks">0</p>
 
-</section>
+</div>
 
-<!-- GUILD -->
+<div class="card">
 
-<section class="category">
+<h3>Daily Reset</h3>
 
-<h2>Guild</h2>
+<p id="resetTimer">Loading...</p>
 
-<label class="task">
-<input type="checkbox" class="taskCheck">
-Guild Check-in
-</label>
+</div>
 
-<label class="task">
-<input type="checkbox" class="taskCheck">
-Guild Donation
-</label>
+<div class="card">
 
-<label class="task">
-<input type="checkbox" class="taskCheck">
-Guild Missions
-</label>
+<h3>Streak</h3>
+
+<p id="streak">1 Day</p>
+
+</div>
 
 </section>
 
-<!-- EXPLORATION -->
+<section class="menu-grid">
 
-<section class="category">
+<div class="menu-card">📋 Daily Checklist</div>
 
-<h2>Exploration</h2>
+<div class="menu-card">📅 Weekly Checklist</div>
 
-<label class="task">
-<input type="checkbox" class="taskCheck">
-Collect Treasure Chests
-</label>
+<div class="menu-card">⚔ Boss Tracker</div>
 
-<label class="task">
-<input type="checkbox" class="taskCheck">
-Gather Resources
-</label>
+<div class="menu-card">🗺 Exploration</div>
 
-<label class="task">
-<input type="checkbox" class="taskCheck">
-Solve World Puzzles
-</label>
+<div class="menu-card">🏆 Collections</div>
 
-<label class="task">
-<input type="checkbox" class="taskCheck">
-Find Hidden Areas
-</label>
+<div class="menu-card">🏰 Guild</div>
 
-</section>
+<div class="menu-card">📊 Statistics</div>
 
-<!-- BEFORE LOGOUT -->
-
-<section class="category">
-
-<h2>Before Logout</h2>
-
-<label class="task">
-<input type="checkbox" class="taskCheck">
-Spend Remaining Stamina
-</label>
-
-<label class="task">
-<input type="checkbox" class="taskCheck">
-Claim All Rewards
-</label>
-
-<label class="task">
-<input type="checkbox" class="taskCheck">
-Prepare Tomorrow's Gear
-</label>
+<div class="menu-card">⚙ Settings</div>
 
 </section>
 
 </main>
 
-<footer>
-
-<p>
-Version 1.0 • Where Winds Meet Companion
-</p>
-
-</footer>
-
 <script src="app.js"></script>
-<nav class="bottom-nav">
 
-    <button class="nav-btn active">
-        🏠
-        <span>Home</span>
-    </button>
-
-    <button class="nav-btn">
-        ✅
-        <span>Daily</span>
-    </button>
-
-    <button class="nav-btn">
-        👤
-        <span>Character</span>
-    </button>
-
-    <button class="nav-btn">
-        ⚔
-        <span>Guild</span>
-    </button>
-
-    <button class="nav-btn">
-        ⚙
-        <span>Settings</span>
-    </button>
-
-</nav>
 </body>
 </html>
