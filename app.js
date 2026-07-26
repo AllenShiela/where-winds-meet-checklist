@@ -143,3 +143,9 @@ updateProgress();
 updateResetClock();
 
 setInterval(updateResetClock,60000);
+
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js");
+    });
+}
