@@ -1,151 +1,42 @@
-// ===================================
-// WHERE WINDS MEET CHECKLIST
-// Version 1.0
-// ===================================
+// Where Winds Meet Companion v2.0
 
-const checkboxes = document.querySelectorAll(".taskCheck");
-const progressFill = document.getElementById("progressFill");
-const progressText = document.getElementById("progressText");
-const resetTime = document.getElementById("resetTime");
+const completedTasks = 0;
+const totalTasks = 20;
 
-const STORAGE_KEY = "wwm-daily-checklist";
-const DATE_KEY = "wwm-last-date";
+const progress = Math.round((completedTasks / totalTasks) * 100);
 
-// ----------------------
-// Daily Reset
-// ----------------------
+const progressText = document.getElementById("progressPercent");
+const completed = document.getElementById("completedTasks");
+const remaining = document.getElementById("remainingTasks");
+const streak = document.getElementById("streak");
 
-function today() {
-    return new Date().toDateString();
-}
+if (progressText) progressText.textContent = progress + "%";
+if (completed) completed.textContent = completedTasks;
+if (remaining) remaining.textContent = totalTasks - completedTasks;
+if (streak) streak.textContent = localStorage.getItem("streak") || "1 Day";
 
-function checkReset() {
-    const lastDate = localStorage.getItem(DATE_KEY);
+function updateResetTimer() {
+    const now = new Date();
 
-    if (lastDate !== today()) {
-        localStorage.removeItem(STORAGE_KEY);
-        localStorage.setItem(DATE_KEY, today());
+    // Daily reset at 4:00 AM local time
+    const reset = new Date();
+    reset.setHours(4, 0, 0, 0);
+
+    if (now >= reset) {
+        reset.setDate(reset.getDate() + 1);
+    }
+
+    const diff = reset - now;
+
+    const h = Math.floor(diff / 1000 / 60 / 60);
+    const m = Math.floor((diff / 1000 / 60) % 60);
+    const s = Math.floor((diff / 1000) % 60);
+
+    const timer = document.getElementById("resetTimer");
+    if (timer) {
+        timer.textContent = `${h}h ${m}m ${s}s`;
     }
 }
 
-// ----------------------
-// Save
-// ----------------------
-
-function saveChecklist() {
-
-    const data = [];
-
-    checkboxes.forEach(box => {
-        data.push(box.checked);
-    });
-
-    localStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify(data)
-    );
-
-}
-
-// ----------------------
-// Load
-// ----------------------
-
-function loadChecklist() {
-
-    const saved = JSON.parse(
-        localStorage.getItem(STORAGE_KEY)
-    );
-
-    if (!saved) return;
-
-    checkboxes.forEach((box,index)=>{
-
-        if(saved[index]){
-            box.checked=true;
-        }
-
-    });
-
-}
-
-// ----------------------
-// Progress
-// ----------------------
-
-function updateProgress(){
-
-    const total = checkboxes.length;
-
-    let complete = 0;
-
-    checkboxes.forEach(box=>{
-
-        if(box.checked){
-            complete++;
-        }
-
-    });
-
-    const percent = (complete/total)*100;
-
-    progressFill.style.width =
-        percent + "%";
-
-    progressText.innerHTML =
-        complete + " / " + total + " Completed";
-
-}
-
-// ----------------------
-// Reset Countdown
-// ----------------------
-
-function updateResetClock(){
-
-    const now = new Date();
-
-    const tomorrow = new Date();
-
-    tomorrow.setDate(now.getDate()+1);
-
-    tomorrow.setHours(0,0,0,0);
-
-    const diff = tomorrow-now;
-
-    const hrs=Math.floor(diff/1000/60/60);
-
-    const mins=Math.floor((diff/1000/60)%60);
-
-    resetTime.innerHTML=
-    hrs+"h "+mins+"m until reset";
-
-}
-
-checkboxes.forEach(box=>{
-
-    box.addEventListener("change",()=>{
-
-        saveChecklist();
-
-        updateProgress();
-
-    });
-
-});
-
-checkReset();
-
-loadChecklist();
-
-updateProgress();
-
-updateResetClock();
-
-setInterval(updateResetClock,60000);
-
-if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-        navigator.serviceWorker.register("./sw.js");
-    });
-}
+setInterval(updateResetTimer, 1000);
+updateResetTimer();
