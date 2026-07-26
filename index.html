@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where Winds Meet Daily Checklist</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="theme-color" content="#0d0d0d">
+</head>
+
+<body>
+
+<header>
+    <h1>Where Winds Meet</h1>
+    <p>Daily Checklist Companion</p>
+</header>
+
+<div class="dashboard">
+
+    <div class="card">
+        <h2>Today's Progress</h2>
+
+        <div class="progress-bar">
+            <div id="progressFill"></div>
+        </div>
+
+        <span id="progressText">
+            0 / 0 Completed
+        </span>
+    </div>
+
+    <div class="card">
+        <h2>Daily Reset</h2>
+
+        <p id="resetTime">
+            Loading...
+        </p>
+    </div>
+
+</div>
+
+<main id="taskContainer">
+
+<!-- LOGIN -->
+
+<section class="category">
+
+<h2>Login</h2>
+
+<label class="task">
+<input type="checkbox" class="taskCheck">
+Claim Login Reward
+</label>
+
+<label class="task">
+<input type="checkbox" class="taskCheck">
+Check Mail
+</label>
+
+<label class="task">
+<input type="checkbox" class="taskCheck">
+Claim Event Rewards
+</label>
+
+<label class="task">
+<input type="checkbox" class="taskCheck">
+Visit Shop Freebies
+</label>
+
+</section>
+
+<!-- DAILY QUESTS -->
+
+<section class="category">
+
+<h2>Daily Quests</h2>
+
+<label class="task">
+<input type="checkbox" class="taskCheck">
+Complete Daily Quest #1
+</label>
+
+<label class="task">
+<input type="checkbox" class="taskCheck">
+Complete Daily Quest #2
+</label>
+
+<label class="task">
+<input type="checkbox" class="taskCheck">
+Complete Daily Quest #3
+</label>
+
+<label class="task">
+<input type="checkbox" class="taskCheck">
+Complete Daily Quest #4
+</label>
+
+</section>
+
+<!-- BOSSES -->
+
+<section class="category">
+
+<h2>Bosses</h2>
+
+<label class="task">
+<input type="checkbox" class="taskCheck">
+World Boss
+</label>
+
+<label class="task">
+<input type="checkbox" class="taskCheck">
+Elite Boss
+</label>
+
+<label class="task">
+<input type="checkbox" class="taskCheck">
+Dungeon Boss
+</label>
+
+</section>
+
+<!-- GUILD -->
+
+<section class="category">
+
+<h2>Guild</h2>
+
+<label class="task">
+<input type="checkbox" class="taskCheck">
+Guild Check-in
+</label>
+
+<label class="task">
+<input type="checkbox" class="taskCheck">
+Guild Donation
+</label>
+
+<label class="task">
+<input type="checkbox" class="taskCheck">
+Guild Missions
+</label>
+
+</section>
+
+<!-- EXPLORATION -->
+
+<section class="category">
+
+<h2>Exploration</h2>
+
+<label class="task">
+<input type="checkbox" class="taskCheck">
+Collect Treasure Chests
+</label>
+
+<label class="task">
+<input type="checkbox" class="taskCheck">
+Gather Resources
+</label>
+
+<label class="task">
+<input type="checkbox" class="taskCheck">
+Solve World Puzzles
+</label>
+
+<label class="task">
+<input type="checkbox" class="taskCheck">
+Find Hidden Areas
+</label>
+
+</section>
+
+<!-- BEFORE LOGOUT -->
+
+<section class="category">
+
+<h2>Before Logout</h2>
+
+<label class="task">
+<input type="checkbox" class="taskCheck">
+Spend Remaining Stamina
+</label>
+
+<label class="task">
+<input type="checkbox" class="taskCheck">
+Claim All Rewards
+</label>
+
+<label class="task">
+<input type="checkbox" class="taskCheck">
+Prepare Tomorrow's Gear
+</label>
+
+</section>
+
+</main>
+
+<footer>
+
+<p>
+Version 1.0 • Where Winds Meet Companion
+</p>
+
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>
