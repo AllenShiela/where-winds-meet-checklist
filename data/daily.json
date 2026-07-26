@@ -1,42 +1,17 @@
 [
-  {
-    "id": 1,
-    "name": "Log In",
-    "category": "General"
-  },
-  {
-    "id": 2,
-    "name": "Claim Daily Rewards",
-    "category": "General"
-  },
-  {
-    "id": 3,
-    "name": "Complete Daily Quests",
-    "category": "Quest"
-  },
-  {
-    "id": 4,
-    "name": "Spend Vitality",
-    "category": "Energy"
-  },
-  {
-    "id": 5,
-    "name": "Guild Donation",
-    "category": "Guild"
-  },
-  {
-    "id": 6,
-    "name": "Arena Matches",
-    "category": "PvP"
-  },
-  {
-    "id": 7,
-    "name": "World Boss",
-    "category": "Boss"
-  },
-  {
-    "id": 8,
-    "name": "Treasure Hunt",
-    "category": "Exploration"
-  }
+  { "id": 1, "category": "General", "name": "Log In" },
+  { "id": 2, "category": "General", "name": "Claim Daily Rewards" },
+  { "id": 3, "category": "Quest", "name": "Complete Daily Quests" },
+  { "id": 4, "category": "Energy", "name": "Spend Vitality" },
+  { "id": 5, "category": "Guild", "name": "Guild Donation" },
+  { "id": 6, "category": "Guild", "name": "Complete Guild Activity" },
+  { "id": 7, "category": "PvP", "name": "Arena Match 1" },
+  { "id": 8, "category": "PvP", "name": "Arena Match 2" },
+  { "id": 9, "category": "Boss", "name": "World Boss" },
+  { "id": 10, "category": "Exploration", "name": "Open Treasure Chest" },
+  { "id": 11, "category": "Exploration", "name": "Complete Exploration Event" },
+  { "id": 12, "category": "Crafting", "name": "Craft Equipment" },
+  { "id": 13, "category": "Crafting", "name": "Cook Food" },
+  { "id": 14, "category": "Collection", "name": "Collect Materials" },
+  { "id": 15, "category": "Social", "name": "Send Friend Hearts" }
 ]
